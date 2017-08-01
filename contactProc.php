@@ -21,7 +21,7 @@
             //mail vars
             $to = "jay.price@pragmadox.com";
             $subject = " " . $requestType . " from " . $name . " ";
-            $mailheaders = "From: " . $email . "\n";
+            $mailheaders = "From: baldeaglejprice@hotmail.com" . "\n";
             $mailheaders .= "Reply-to: " . $email . "\n";
             //send the email!!
             mail($to, $subject, $msg, $mailheaders);
