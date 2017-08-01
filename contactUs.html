@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Contact Form</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css" type="text/css">
+		<link href="../../css/my-styles.css" rel="stylesheet" type="text/css">
+	
+</head>
+
+<body>
+	<form name="form1" id="form1" method="post" action="contactProc.php">
+	
+		<table width="500px" border="1px" cellpadding="5px" align="center">
+		
+			<tr>
+				<td colspan="2">
+					<h1 align="center">Contact Us:</h1>	
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+                First Name: <input name="firstName" type="text" id="firstName" placeholder="John" required>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+                Last Name: <input name="lastName" type="text" id="lastName" placeholder="Doe" required>
+				</td>
+			</tr>
+        
+        <tr>
+				<td>
+                Company: <input name="company" type="text" id="company" placeholder="propr Technology Solutions" optional>
+				</td>
+        </tr>
+          
+        <tr>
+				<td>
+                Email Address: <input name="email" type="email" id="email" required placeholder = "example@example.com">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+               <br>
+                   Request Type: <select required name="requestType" id="requestType">
+                        <option value="general">General</option>
+                        <option value="consult">Business Consultation</option>
+                        <option value="quote">Request A Quote</option>
+                        <option value="feedback">Submit Feedback</option>
+                        <option value="friend">Social Request</option>
+                    </select><br><br>
+                <textarea name="comments" id="comments" placeholder="Optional Comments."></textarea>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<button type="submit" name="submit" id="submit" value="Submit">Submit</button>
+				</td>
+			</tr>
+		
+		</table>
+	
+	
+	</form>
+
+</body>
+
+</html>
+
+
+
+
+
