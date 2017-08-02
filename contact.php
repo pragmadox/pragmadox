@@ -5,7 +5,9 @@
 //POST - in case user does not support javascript, we'll use POST instead
 $name = ($_GET['name']) ? $_GET['name'] : $_POST['name'];
 $email = ($_GET['email']) ?$_GET['email'] : $_POST['email'];
-$comment = ($_GET['comment']) ?$_GET['comment'] : $_POST['comment'];
+$comments = ($_GET['comments']) ?$_GET['comments'] : $_POST['comments'];
+$company = ($_GET['company']) ?$_GET['company'] : $_POST['company'];
+$requestType = ($_GET['requestType']) ?$_GET['requestType'] : $_POST['requestType'];
 
 //flag to indicate which method it uses. If POST set it to 1
 
@@ -14,21 +16,24 @@ if ($_POST) $post=1;
 //Simple server side validation for POST data, of course, you should validate the email
 if (!$name) $errors[count($errors)] = 'Please enter your name.';
 if (!$email) $errors[count($errors)] = 'Please enter your email.'; 
-if (!$comment) $errors[count($errors)] = 'Please enter your message.'; 
+if (!$comments) $errors[count($errors)] = 'Please enter your message.'; 
+if (!$company) $errors[count($errors)] = 'Please enter your company.';
+if (!$requestType) $errors[count($errors)] = 'Please enter your Request Type.';
 
 //if the errors array is empty, send the mail
 if (!$errors) {
 
 	//recipient - replace your email here
-	$to = 'wowthemesnet@gmail.com';	
+	$to = 'jay.price@pragmadox.com';	
 	//sender - from the form
 	$from = $name . ' <' . $email . '>';
 	
 	//subject and the html message
-	$subject = 'Message via Aries from ' . $name;	
+	$subject = 'Message from ' . $name . " with " . $company;
 	$message = 'Name: ' . $name . '<br/><br/>
+             Request Type: ' . $requestType . '<br/><br/>
 		       Email: ' . $email . '<br/><br/>		
-		       Message: ' . nl2br($comment) . '<br/>';
+		       Message: ' . $comments . '<br/>';
 
 	//send the mail
 	$result = sendmail($to, $subject, $message, $from);
