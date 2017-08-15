@@ -27,16 +27,17 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Pragmadox Solutions</h1>
-								<p>For creative solutions to your technological and business problems, including web and data management.
+                         <p>For creative solutions to your technological and business problems, including web and data management. </p>
 							</div>
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
+								<li><a href="#intro">Introduction</a></li>
+								<li><a href="#work">Resume</a></li>
+								<li><a href="#about">Current Endeavors</a></li>
 								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
+                        <!-- <li><a href="#purchase">Purchase></a></li> -->
+								<li><a href="#phenomenaExplained">Phenomena Explained</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -46,35 +47,24 @@
 
 						<!-- Intro -->
 							<article id="intro">
-								<h2 class="major">Intro</h2>
+								<h2 class="major">Introduction</h2>
 								<span class="image main"><img src="images/waterfall.jpg" alt="waterfall" /></span>
 								<p>Jay Price is a veteran of the United States Marine Corps where he worked as an Arabic Linguist and Intelligence Analyst supporting missions in the Middle East and Africa. In 2014, He completed his Bachelor of Arts in Political Science and Asian Languages and Civilizations, with certificates in Middle East Studies and International Relations </a>.</p>
 								<p>After interning with the House of Representatives and Stroz Friedberg, he completed his Master of Science in Data Analytics at Fordham University in New York in 2017.</p>
-                                <p>His interests include unmanned aerial vehicles, photography, running, skydiving, web development, and data analysis.</p>
+                        <p>His interests include unmanned aerial vehicles, photography, running, skydiving, web development, and data analysis.</p>
+             
 							</article>
 
 						<!-- Work -->
 							<article id="work">
 								<h2 class="major">Work</h2>
+                            <button id="resumeDownload"><a href="pdf/resume.pdf">Download</a></button>
 								<span class="image main"><img src="images/resume.jpg" alt="resume" /></span>
 								<object data="/pdf/sample-3pp.pdf#page=1" type="application/pdf" width="100%" height="100%">
-                                <p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="/pdf/resume.pdf">Download PDF</a>.</p>
-                                </object>
-							</article>
-
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								
-                        <h2 class="major">A Close-Reading of Politics</h2>
-
-								<section>
-									<h3 class="major">Video Blog</h3>
-
-								</section>
-							</article>
-
-						<!-- Contact -->
+                        </object>
+                        
+				        </article>
+                <!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
 								<form method="post" action="contact.php">
@@ -120,41 +110,144 @@
 								</ul>
 							</article>
 
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">A Close-Reading of Politics</h2>
+						<!-- About -->
+							<article id="about">
+								<h1 class="major">Current Endeavors</h1>
+								
+                        <h2 class="major">Pragmadox Solutions</h2>
+                        
+                        <p>In 2017, after finishing my formal education, I took the leap to start my own business, establishing Pragmadox Solutions, LLC which sources and sells products on Amazon as a third-party.</p>
+                        <p>Pragmadox Solutions also does business as propr Technology Solutions, which provides premium content for media and web purposes. The company aims to use current technologies to help people navigate the world more seamlessly. Therefore, it is a priority for us to provide all members of our society with information that can help them to make the best decisions of which they are capable.</p>
+                        <ul class="actions">Our capabilities include:</ul>
+                         <li>Web Design and Deployment</li>
+                         <li>Database Initialization and Maintenance</li>
+                         <li>Information Management</li>
+                         <li>Content Management and Deployment</li>
+                         <li>Photography and Media Solutions</li>
+                         <li>Logo Design and Branding</li>
 
+							</article>
+
+						<!-- Purchases -->
+							<article id="purchase">
+								<h2 class="major">Feedback and Purchases</h2>
+								<form method="post" action="php/purchase.php" autocomplete="on">
+									<div class="field half first">
+                                <label for="owner">Name</label>
+                                <input type="text" class="form-control" id="owner">
+                            </div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input required type="email" name="email" id="email" placeholder="example@example.com"/>
+									</div>
+                           <div class="field half first">
+										<label for="company">Company (optional)</label>
+										<input required type="text" name="company" id="company" placeholder="Google"/>
+									</div>
+                           <div class="field half">
+                               <label for="requestType">Business Type</label>
+                               <select required name="requestType" id="requestType">
+                                    <option value="General">General</option>
+                                    <option value="Consultation">Business Consultation</option>
+                                    <option value="Quote">Request A Quote</option>
+                                    <option value="Feedback">Submit Feedback</option>
+                                    <option value="Social Request">Social Request</option>
+                                    <option selected value="transaction">Proceed with Transaction</option>
+                                </select>
+                            </div>
+                    <div class="field half first" id="card-number-field">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber" placeholder="1234.5678.2345.6789">
+                    </div><br>
+                    <div class="field half">
+                        <label for="cvv">Card Verification Value</label>
+                        <input type="text" class="form-control" id="cvv" placeholder="4567 or 456">
+                    </div>
+                    <div class="field half first" id="expiration-month">
+                        <label>Expiration Month</label>
+                        <select>
+                            <option value="01">January</option>
+                            <option value="02">February </option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="field half" id="expiration-year">
+                        <label>Expiration Year</label>
+                        <select>
+                            <option value="16">2016</option>
+                            <option value="17">2017</option>
+                            <option value="18">2018</option>
+                            <option value="19">2019</option>
+                            <option value="20">2020</option>
+                            <option value="21">2021</option>
+                            <option value="22">2022</option>
+                        </select>
+                    </div><br>
+                    <div class="form-group" id="credit_cards"> &nbsp;
+                        <img src="simple-credit-card-validation-form/assets/images/visa.jpeg" id="visa" width="auto" height="35px"> &nbsp;
+                        <img src="simple-credit-card-validation-form/assets/images/mastercard.jpg" id="mastercard" width="auto" height="35px"> &nbsp;
+                        <img src="simple-credit-card-validation-form/assets/images/americanExpress.jpeg" id="amex" width="auto" height="35px"> &nbsp;
+                    </div><br>
+                    <div class="form-group" id="pay-now"><span left="40px">
+                        <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+                        </span>
+                    </div>
+                            
+                        
+									<div class="field">
+										<label for="comments">Feedback</label>
+										<textarea required name="comments" id="comments" rows="4" placeholder="If there is anything at all that you would like to share with us about your experience. If you have suggestions for other locations you would like us to shoot or want to request a quote for custom content, please select 'Request A Quote' from the drop-down menu. We will contact you within 48 hours to discuss your request."></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+                         
+								<ul class="icons">
+									<li><a href="https://twitter.com/PragmaParadox" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="https://www.facebook.com/pragmadox" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="https://www.instagram.com/pragmadox/?hl=en" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="https://github.com/pragmadox" class="icon fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+						<!-- Elements -->
+							<article id="phenomenaExplained">
+								<h1 class="major" id="blogHeader">Phenomena Explained</h1>
+                        <h3 class="major">August 14, 2017</h3>
+                            <br>
+                            <p id="blogEntry">
+                               On the way home from a wedding in Maine, I stopped to take a piss. While I sat there somewhere in South Maine relieving myself, I wistfully noted the many instances of n***** and Fuck Obama and many strange, very conflicted testaments to the sexual prowess of homosexual men. Some days 2017 feels too similar to 1965.</p>
+                             <p>Those of us who want to pass on a better world to our children definitely still have much work to do. I can only credit the countless wonderful patient, insightful friends, the military, and academia with helping me to overcome the provincial attitudes that would almost certainly have defined my outlook. American tax dollars took me out of the world of the military and offered me an opportunity to learn and grow, unconstrained by the small-town mentality in which I'd been born and raised.</p>
+                             <p>Education is not only about learning complex ways of counting things in a database, it is for learning how to be a better person in a world where every intuition is to align oneself with people who think, look, and feel like you. Our ongoing challenge is to let the sunlight disinfect the memetic viruses that periodically infect entire groups within our society.</p>
+                             <p>Racism is real in 2017. I wish there was a nicer way to put this, but the years ahead, as the technological revolution splits our country at the seams and exposes the starkness of the divides between us, it offers opportunities for policymakers, complicit or indifferent cogniscenti, and politicians to exploit these miniscule differences for their own gains. This will almost certainly be a uniquely difficult time for our country and the world.</p>
+                             <p>On the bright side, there is so much that we can do, so much left to do, so many opportunities to reinvigorate community, learn together, live together, build together, die together.</p>
+                             <p>“The King will reply, 'Truly I tell you, whatever you did for one of the least of these brothers and sisters of mine, you did for me.'</p>
+                             <p>رَبِّ اغْفِرْ لِقَوْمِي فَإِنَّهُمْ لاَ يَعْلَمُونَ</p>
+                             <p>After all, we're really not that different.</p>
+								<br>	
 								<section>
-									<h3 class="major">Video Blog</h3>
+								<h3 class="major">August 10, 2017</h3>
 
 								</section>
-
+                         <p id="blogIntroduction">
+                            Sitting around the campire, I struck up a conversations with an older gentlemen. He was well-traveled, had worked for NASA and consulted on projects for air traffic control and radar systems. I mentioned in passing that I would soon be starting a video blog to discuss the current state of affairs in the world and hoping to inspire a more comprehensive, patient, and meaningful discussion about what aspects of society could be altered to create greater equality and address the short-comings that exist in terms of creating a more sustainable social order. 
+                         
+                         He asked me, "What do you intend to call your blog?" I responded, "A Close-Reading of Politics." He laughed and said, "You'll never get an audience with a blog that is essential 'Phenomena Explained.'" I laughed. 
+                         
+                         I am sincerely hoping that he is wrong.</p>
 								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
+									
+								    
 									<h4>Icons</h4>
 									<ul class="icons">
 										<li><a href="https://twitter.com/PragmaParadox" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
@@ -291,7 +384,7 @@
 
 								<section>
 									<h3 class="major">Form</h3>
-									<form method="post" action="#">
+									<form method="post" action="php/purchase.php">
 										<div class="field half first">
 											<label for="demo-name">Name</label>
 											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />

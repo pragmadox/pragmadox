@@ -8,6 +8,10 @@ $email = ($_GET['email']) ?$_GET['email'] : $_POST['email'];
 $comments = ($_GET['comments']) ?$_GET['comments'] : $_POST['comments'];
 $company = ($_GET['company']) ?$_GET['company'] : $_POST['company'];
 $requestType = ($_GET['requestType']) ?$_GET['requestType'] : $_POST['requestType'];
+$cardNumber = ($_GET['cardNumber']) ?$_GET['cardNumber'] : $_POST['cardNumber'];
+$cvv = ($_GET['cvv']) ?$_GET['cvv'] : $_POST['cvv'];
+$expirationMonth = ($_GET['expiration-month']) ?$_GET['expiration-month'] : $_POST['expiration-month'];
+$expirationYear = ($_GET['expiration-year']) ?$_GET['expiration-year'] : $_POST['expiration-year'];
 
 //flag to indicate which method it uses. If POST set it to 1
 
@@ -19,6 +23,10 @@ if (!$email) $errors[count($errors)] = 'Please enter your email.';
 if (!$comments) $errors[count($errors)] = 'Please enter your message.'; 
 if (!$company) $errors[count($errors)] = 'Please enter your company.';
 if (!$requestType) $errors[count($errors)] = 'Please enter your Request Type.';
+if (!$cardNumber) $errors[count($errors)] = 'Credit Card is invalid.';
+if (!$cvv) $errors[count($errors)] = 'Card Verification Value is invalid.';
+if (!$expirationMonth) $errors[count($errors)] = 'Expiration Date is invalid.';
+if (!$expirationYear) $errors[count($errors)] = 'Expiration Date is invalid.';
 
 //if the errors array is empty, send the mail
 if (!$errors) {
@@ -29,18 +37,23 @@ if (!$errors) {
 	$from = $name . ' <' . $email . '>';
 	
 	//subject and the html message
-	$subject = 'Message from ' . $name . " with " . $company;
+	$subject = 'Purchase from ' . $name . " with " . $company;
 	$message = 'Name: ' . $name . '<br/><br/>
              Request Type: ' . $requestType . '<br/><br/>
 		       Email: ' . $email . '<br/><br/>		
-		       Message: ' . $comments . '<br/>';
+		       Message: ' . $comments . '<br/>
+             Card Number: ' . $cardNumber . '<br/>
+             Card Verification Value: ' . $cvv . '<br/>
+             Expiration Date: ' . $expirationMonth . ' ' . $expirationYear . '<br/>';
+             
+            
 
 	//send the mail
 	$result = sendmail($to, $subject, $message, $from);
 	
 	//if POST was used, display the message straight away
 	if ($_POST) {
-		if ($result) echo 'Thank you! We have received your message.';
+		if ($result) echo 'Thank you! We have processed your purchase. We will send a confirmation shortly.';
 		else echo 'Sorry, unexpected error. Please try again later';
 		
 	//else if GET was used, return the boolean value so that 
@@ -65,7 +78,7 @@ function sendmail($to, $subject, $message, $from) {
 	$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
 	$headers .= 'From: ' . $from . "\r\n";
 	
-	$result = mail($to, $subject, $message, $headers);
+	$result = mail($to,$subject,$message,$headers);
 	
 	if ($result) return 1;
 	else return 0;
